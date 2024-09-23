@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4week_object_gen</title>
+    <script>
+        //직접 객체 만들기
+        function register() { this.nStudent++; }
+        function unregister() { this.nStudent--; }
+        function getStudntCount() { return this.nStudent; }
+
+        let webp1 = new Object();
+        webp1.korName = "웹프로그래밍";
+        webp1.engName = "Web Programming";
+        webp1.classCode = "V024003";
+        webp1.nStudent = 0;
+        webp1.register = register;
+        webp1.unregister = unregister;
+        webp1.getStudntCount = getStudntCount;
+
+
+        //리터럴 표기법
+        let webp2 = {
+            korName : "웹프로그래밍",
+            engName : "Web Programming",
+            classCode : "V024003",
+            nStudent : 0,
+
+            register : function() { this.nStudent++; },
+            unregister : function() { this.nStudent--; },
+            getStudntCount : function() { return this.nStudent; }
+        };
+
+
+        //Prototype
+        function WebProgramming(korName, engName, classCode, nStudent){
+            this.korName = korName;
+            this.engName = engName;
+            this.classCode = classCode;
+            this.nStudent = nStudent;
+
+            this.register = function() {this.nStudent++;}
+            this.unregister = function() {this.nStudent--;}
+            this.getStudntCount = function() {return this.nStudent;}
+        }
+    </script>
+</head>
+<body>
+    <h2>1. 직접 객체 만들기</h2>
+    <script>
+        document.write("교과목 이름 = " + webp1.korName + "<br>");
+        document.write("등록 학생 수 = " + webp1.getStudntCount() + "<br>");
+        webp1.register();
+        document.write("after register, 등록 학생 수 = " + webp1.getStudntCount() + "<br>" + "<hr>");
+    </script>
+
+    <h2>2. 리터럴 표기법</h2>
+    <script>
+        document.write("교과목 이름 = " + webp2.korName + "<br>");
+        document.write("등록 학생 수 = " + webp2.getStudntCount() + "<br>");
+        webp2.register();
+        document.write("after register, 등록 학생 수 = " + webp2.getStudntCount() + "<br>" + "<hr>");
+    </script>
+
+    <h2>3. Prototype</h2>
+    <script>
+        let webp3 = new WebProgramming("웹프로그래밍", "Web Programming", "V024003", 0);
+        document.write("교과목 이름 = " + webp3.korName + "<br>");
+        document.write("등록 학생 수 = " + webp3.getStudntCount() + "<br>");
+        webp3.register();
+        document.write("after register, 등록 학생 수 = " + webp3.getStudntCount() + "<br>" + "<hr>");
+    </script>
+</body>
+</html>
