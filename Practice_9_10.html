@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제 9-10</title>
+    <script>
+        function add(obj) {
+            let text = document.getElementById("text");
+            text.value += obj.value;
+        }
+        function clear() {
+            let text = document.getElementById("text");
+            text.value = "";
+        }
+        function back() {
+            let text = document.getElementById("text");
+            let newtext = text.value.slice(0, length-1);
+            text.value = newtext;
+        }
+        function calc() {
+            let text = document.getElementById("text");
+            text.value = eval(text.value);
+        }
+    </script>
+</head>
+
+<body>
+    <h2>계산기 만들기</h2>
+    <hr>
+    <input id="text" type="text" value="" size="27">
+    <table>
+        <tr>
+            <td><input type="button" value="Back" style="width: 50px;" onclick="back()"></td>
+            <td><input type="button" value="CE" style="width: 50px;" onclick="clear()"></td>
+            <td><input type="button" value="C" style="width: 50px;" onclick="clear()"></td>
+            <td><input type="button" value="=" style="width: 50px;" onclick="calc()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" style="width: 50px;" onclick="add(this)"></td>
+            <td><input type="button" value="8" style="width: 50px;" onclick="add(this)"></td>
+            <td><input type="button" value="9" style="width: 50px;" onclick="add(this)"></td>
+            <td><input type="button" value="/" style="width: 50px;" onclick="add(this)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" style="width: 50px;" onclick="add(this)"></td>
+            <td><input type="button" value="5" style="width: 50px;" onclick="add(this)"></td>
+            <td><input type="button" value="6" style="width: 50px;" onclick="add(this)"></td>
+            <td><input type="button" value="*" style="width: 50px;" onclick="add(this)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" style="width: 50px;" onclick="add(this)"></td>
+            <td><input type="button" value="2" style="width: 50px;" onclick="add(this)"></td>
+            <td><input type="button" value="3" style="width: 50px;" onclick="add(this)"></td>
+            <td><input type="button" value="-" style="width: 50px;" onclick="add(this)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" style="width: 50px;" onclick="add(this)"></td>
+            <td><input type="button" value="+" style="width: 50px;" onclick="add(this)"></td>
+            <td><input type="button" value="NONE" style="width: 50px;" onclick=""></td>
+            <td><input type="button" value="NONE" style="width: 50px;" onclick=""></td>
+        </tr>
+    </table>
+</body>
+
+</html>
