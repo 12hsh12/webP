@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let now;
+        let time;
+        let timerID;
+
+        function timerstart() {
+            now = new Date();
+            time = document.getElementById("time");
+            timerID = setInterval("clock()", 1000);
+            time.innerHTML = now.toLocaleTimeString();
+        }
+
+        function timerclick() {
+            if (timerID) {
+                clearInterval(timerID);
+                time.style.color = "grey";
+                timerID = null;
+            }
+            else if (timerID == null) {
+                timerID = setInterval("clock()", 1000);
+                time.style.color = "black";
+            }
+        }
+
+        function clock() {
+            now = new Date();
+            time.innerHTML = now.toLocaleTimeString();
+        }
+    </script>
+</head>
+
+<body onload="timerstart()">
+    <h3>div 태그에 시계 만들기</h3>
+    <p>시계를 클릭하면 시계가 멈추고 다시 클릭하면 가기 시작한다.</p>
+    <hr>
+    <div id="time" style="border: 1px solid; width: 130px;" onclick="timerclick()"></div>
+</body>
+
+</html>
