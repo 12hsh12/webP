@@ -1,30 +1,89 @@
 <h1>Web Programming 실습 코드 모음</h1>
 
-<p>week1.html</p>
 <ol>
-1주차 연습
-기본 HTML 문서 작성
-1주차 공부 내용 정리
-week2.html
-2주차 연습
-표, 링크, 시맨틱 태그 등 추가
-2주차 공부 내용 정리 추가
-week3.html
-3주차 연습
-CSS3 style 공부
-object-gen.html
+    <li>week1.html</li>
+    <ul>
+        <li>1주차 연습</li>
+        <li>기본 HTML 문서 작성</li>
+        <li>1주차 공부 내용 정리</li>
+    </ul>
+    <li>week2.html</li>
+    <ul>
+        <li>2주차 연습</li>
+        <li>표, 링크, 시맨틱 태그 등 추가</li>
+        <li>2주차 공부 내용 정리 추가</li>
+    </ul>
+    <li>week3.html</li>
+    <ul>
+        <li>3주차 연습</li>
+        <li>CSS3 style 공부</li>
+        <li>3주차 공부 내용 정리 추가</li>
+    </ul>
+</ol>
 
-객체 생성 3가지 방법 연습
-Week 5 연습
+<ul>
+    <li>Week 4 연습</li>
+    <ul>
+        <li>4week_object_gen.html: 객체 생성 3가지 방법 연습</li>
+    </ul>
+</ul>
 
-prac8-4.html: 실습문제 8-4
-prac8-6.html: 실습문제 8-6
-Week 6 연습
+<ul>
+    <li>Week 5 연습</li>
+    <ul>
+        <li>Practice_8_4.html: 실습문제 8-4 클릭하면 답이 나오는 곱셈 연산</li>
+        <li>Practice_8_6.html: 실습문제 8-6 클릭하면 innerHTML로 작성하기</li>
+        <li>Practice_8_9.html: 실습문제 8-9 클릭하면 프롬프트로 라면 끓이는 순서 추가</li>
+        <li>Practice_8_10.html: 실습문제 8-10 클릭하면 정답을 동적으로 삽입하는 퀴즈</li>
+    </ul>
+</ul>
 
-pract9-2.html: 실습문제 9-2 (라디오버튼 선택된 것 알아내서 그림 그리기)
+<ul>
+    <li>Week 6 연습</li>
+    <ul>
+        <li>Practice_9_2.html: 실습문제 9-2 라디오 버튼 클릭하면 이미지를 함께 출력</li>
+        <li>Practice_9_3.html: 실습문제 9-3 onkeydown시 입력된 수식 계산</li>
+        <li>Practice_9_6.html: 실습문제 9-6 마우스 휠에 따라 이미지의 확대/축소</li>
+        <li>Practice_9_10.html: 실습문제 9-10 계산기 만들기 연습</li>
+    </ul>
+</ul>
 
-pract9-3.html: 실습문제 9-3 (Enter 키가 입력되었을 때 수식의 값을 계산하기)
+<ul>
+    <li>Week 7 연습</li>
+    <ul>
+        <li>Practice_10_5_6.html: 실습문제 10-5, 10-6 클릭하면 멈추고 재실행되는 시계 만들기 연습</li>
+    </ul>
+</ul>
 
-Week 7 연습
+<ul>
+    <li>Week 9 연습</li>
+    <ul>
+        <li>Practice_12_2_retrieve.html: 실습문제 12-2 세션 스토리지를 이용하여 구입 리스트 검색</li>
+        <li>Practice_12_2_save.html: 실습문제 12-2 세션 스토리지를 이용하여 구입 리스트 작성 및 저장</li>
+        <li>Practice_12_4_read.html: 실습문제 12-4 로컬 스토리지 이용하여 일기쓰기 연습</li>
+        <li>Practice_12_4_write.html: 실습문제 12-4 로컬 스토리지 이용하여 일기보기 연습</li>
+    </ul>
+</ul>
 
-prac10-5.html: 실습문제 10-5와 10-6을 포함 (SetTimeout, SetInterval 이용 시계 보이기)
+<ul>
+    <li>Week 10 연습</li>
+    <ul>
+        <li>Practice_13_6.html: 실습문제 13-6 워크 태스크 이용하여 곱셈 계산기 만드는 연습</li>
+        <li>multip.js: 실습문제 13-6에 사용되는 워크 태스크</li>
+    </ul>
+</ul>
+
+<ul>
+    <li>Week 12 연습</li>
+    <ul>
+        <li>funcPr-practice.js: 함수형 프로그래밍 연습</li>
+    </ul>
+</ul>
+
+<ul>
+    <li>Week 13 연습</li>
+    <ul>
+        <li>webserver1.js: 방식에 따른 웹서버 생성 1</li>
+        <li>webserver2.js: 방식에 따른 웹서버 생성 2</li>
+    </ul>
+</ul>
