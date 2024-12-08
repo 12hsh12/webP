@@ -87,3 +87,18 @@
         <li>webserver2.js: 방식에 따른 웹서버 생성 2</li>
     </ul>
 </ul>
+
+<ul>
+    <li>Week 14 연습</li>
+    <ul>
+        <li>app1.js: express을 통해 서버 실행</li>
+        <li>app2.js: app1에서 writheHead,end 사용 추가</li>
+        <li>app3.js: 여러개의 미들 웨어 사용</li>
+        <li>app4.js: 미들웨어로 클라이언트에 응답보내기</li>
+        <li>app5.js: express에서 객체 생성</li>
+        <li>app6.js: express에서 redirect로 강제 사이트 이동시키기</li>
+        <li>app7.js: query를 통해 값 출력하기</li>
+        <li>app8.js: body-parser, serve-static을 통한 path 지정을 통해 값 출력하기</li>
+        <li>app9.js: app8에서 라우터 사용, 라우터로 post 방식으로 값 출력</li>
+    </ul>
+</ul>
