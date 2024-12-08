@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메모 입력</title>
+</head>
+<body>
+    <h1>메모 입력</h1>
+    <form id="memoForm">
+        <label for="title">제목:</label>
+        <input type="text" id="title" name="title" required>
+        <br><br>
+        <label for="content">메모 내용:</label>
+        <textarea id="content" name="content" rows="5" cols="30" required></textarea>
+        <br><br>
+        <button type="button" onclick="saveMemo()">저장</button>
+        <button type="button" onclick="goToViewPage()">보기</button>
+    </form>
+
+    <script>
+        function saveMemo() {
+            // 제목과 내용 가져오기
+            const title = document.getElementById("title").value;
+            const content = document.getElementById("content").value;
+
+            if (title && content) {
+                // 로컬 스토리지에 저장
+                const memos = JSON.parse(localStorage.getItem("memos")) || [];
+                memos.push({ title, content });
+                localStorage.setItem("memos", JSON.stringify(memos));
+                alert("메모가 저장되었습니다.");
+                
+                // 입력 필드 초기화
+                document.getElementById("title").value = "";
+                document.getElementById("content").value = "";
+            } else {
+                alert("제목과 내용을 모두 입력해주세요.");
+            }
+        }
+
+        function goToViewPage() {
+            // 출력 페이지로 이동
+            window.location.href = "prac12-3_2.html";
+        }
+    </script>
+</body>
+</html>

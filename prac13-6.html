@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 곱하기 프로그램</title>
+</head>
+<body>
+    <h1>숫자 곱하기 계산기</h1>
+    <form id="multiplyForm">
+        <input type="text" id="number1" required>
+        x
+        <input type="text" id="number2" required>
+        <button type="button" id="calculateButton">곱하기</button>
+        <input type="text" id="result" readonly>
+    </form>
+
+    <script>
+        // 워커 객체 생성
+        const worker = new Worker("calc.js");
+
+        // 버튼 클릭 이벤트
+        document.getElementById("calculateButton").addEventListener("click", () => {
+            // 입력값 가져오기
+            const number1 = document.getElementById("number1").value.trim();
+            const number2 = document.getElementById("number2").value.trim();
+
+            // 유효성 검사: 숫자인지 확인
+            if (!isNaN(number1) && !isNaN(number2) && number1 !== "" && number2 !== "") {
+                const num1 = parseFloat(number1);
+                const num2 = parseFloat(number2);
+
+                // 워커에 두 숫자를 전달
+                worker.postMessage({ num1, num2 });
+            } else {
+                alert("유효한 숫자를 입력하세요.");
+            }
+        });
+
+        // 워커에서 결과를 받았을 때 실행
+        worker.onmessage = (event) => {
+            const result = event.data; // 워커에서 전달된 결과
+            document.getElementById("result").value = result; // 결과 출력
+        };
+    </script>
+</body>
+</html>

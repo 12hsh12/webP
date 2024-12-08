@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학점 계산 프로그램</title>
+</head>
+<body>
+    <h1>학점 계산기</h1>
+    <button id="scoreButton">점수 입력</button>
+    <div id="resultContainer"></div>
+
+    <script>
+        // 워커 객체 생성
+        const worker = new Worker("score.js");
+
+        // 점수 입력 버튼 클릭 이벤트
+        document.getElementById("scoreButton").addEventListener("click", () => {
+            // 점수를 입력받음
+            const score = prompt("점수를 입력하세요 (0~100):");
+
+            // 입력값이 숫자이고 0~100 사이인지 확인
+            if (score !== null && !isNaN(score) && score >= 0 && score <= 100) {
+                // 워커로 점수 전송
+                worker.postMessage(score);
+            } else {
+                alert("유효한 점수를 입력하세요 (0~100 사이의 숫자).");
+            }
+        });
+
+        // 워커에서 메시지를 받았을 때 실행
+        worker.onmessage = (event) => {
+            const resultContainer = document.getElementById("resultContainer");
+            const result = event.data; // 워커에서 전달된 결과
+
+            // 결과를 화면에 표시
+            const resultElement = document.createElement("p");
+            resultElement.textContent = result; // 예: "90=A"
+            resultContainer.appendChild(resultElement);
+        };
+    </script>
+</body>
+</html>

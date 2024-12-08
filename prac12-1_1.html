@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세션 스토리지 저장</title>
+</head>
+<body>
+    <h1>이름과 학번 입력</h1>
+    <form id="inputForm">
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="studentId">학번:</label>
+        <input type="text" id="studentId" name="studentId" required>
+        <button type="button" onclick="saveToSessionStorage()">스토리지에 저장</button>
+    </form>
+
+    <script>
+        function saveToSessionStorage() {
+            // 입력값 가져오기
+            const name = document.getElementById("name").value;
+            const studentId = document.getElementById("studentId").value;
+
+            // 세션 스토리지에 저장
+            sessionStorage.setItem("name", name);
+            sessionStorage.setItem("studentId", studentId);
+        }
+    </script>
+    <br>
+    <a href="prac12-1_2.html">이름으로 학번 검색 페이지로</a>
+</body>
+</html>

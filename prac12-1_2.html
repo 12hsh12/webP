@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세션 스토리지 검색</title>
+</head>
+<body>
+    <h1>세션 스토리지에서 학번 검색</h1>
+    <form id="searchForm">
+        <label for="searchName">이름:</label>
+        <input type="text" id="searchName" name="searchName" required>
+        <br><br>
+        <label for="studentId">학번:</label>
+        <input type="text" id="studentId" name="studentId" readonly>
+        <br><br>
+        <button type="button" onclick="searchFromSessionStorage()">스토리지에서 검색</button>
+    </form>
+
+    <script>
+        function searchFromSessionStorage() {
+            // 입력값 가져오기
+            const searchName = document.getElementById("searchName").value;
+
+            // 세션 스토리지에서 검색
+            const storedName = sessionStorage.getItem("name");
+            const storedStudentId = sessionStorage.getItem("studentId");
+
+            // 결과를 학번 입력 칸에 출력
+            if (searchName === storedName) {
+                document.getElementById("studentId").value = storedStudentId;
+            } else {
+                document.getElementById("studentId").value = "해당 이름이 없습니다.";
+            }
+        }
+    </script>
+
+    <br>
+    <!-- 저장 페이지로 이동하는 하이퍼링크 -->
+    <a href="prac12-1_1.html">이름으로 학번 저장 페이지로</a>
+</body>
+</html>
